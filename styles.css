@@ -3,6 +3,15 @@
     padding: 0;
 }
 
+ul {
+    list-style: none;
+}
+
+span {
+    font-size: 1.5rem;
+    margin-left: 12px;
+}
+
 body {
     height: 100vh;
     display: grid;
@@ -16,12 +25,10 @@ header {
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr 1fr;
+    box-shadow: 0 5px 5px #e2e8f0;
+    z-index: 1;
 }
 
-.sidebar {
-    background-color: brown;
-    grid-row: 1/3;
-}
 
 main {
     background-color: forestgreen;
@@ -31,21 +38,15 @@ main {
 
 .search {
     grid-column: 1/2;
+    display: grid;
+    grid-template-columns: 1fr 8fr;
+    justify-content: center;
+    align-content: center;
 }
 
-.userInfo {
-    grid-column: 2/3;
-}
-
-.intro {
-    grid-column: 1/2;
-    grid-row: 2/3;
-}
-
-.headerBtn{
-    grid-column: 2/3;
-    grid-row: 2/3;
-    align-self: center;
+.searchIcon {
+    justify-self: end;
+    margin-right: 10px;
 }
 
 .search>input {
@@ -59,10 +60,69 @@ main {
     color: #475569;
 }
 
-ul {
-    list-style: none;
+.userInfo {
+    grid-column: 2/3;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 0.8fr 2fr;
+    align-items: center;
+}
+
+.bellIcon {
+    justify-self: end;
+}
+
+.smallUserIcon {
+    justify-self: center;
+    margin-bottom: 20px;
+}
+
+.intro {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    display: grid;
+    grid-template-columns: 1fr 5.5fr;
+    align-items: center;
+}
+
+.userName.small {
+    font-weight: bold;
+    font-size: 1.5rem;
+    justify-self: start;
+}
+
+.bigUserIcon {
+    justify-self: end;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.saluteUser {
+  
+}
+
+.userName.intro {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.userName.big {
+    font-weight: bold;
+    font-size: 1.8rem;
+}
+
+.headerBtn{
+    grid-column: 2/3;
+    grid-row: 2/3;
+    display: grid;
+    align-items: center;
+}
+
+
+.hBtns {
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    gap: 30px;
 }
 
 .bigUserIcon, .smallUserIcon {
@@ -74,9 +134,61 @@ ul {
     color: white;
     background-color: #de985e;
     border: none;
-    width: 6rem;
-    height: 2rem;
+    width: 6.2rem;
+    height: 2.2rem;
     font-weight: bold;
     border-radius: 20px;
     font-size: 1rem;
+}
+
+.sidebar {
+    background-color: brown;
+    grid-row: 1/3;
+    display: grid;
+    grid-template-rows: 1fr 1fr 3fr;
+    gap: 40px;
+}
+
+.dashboard {
+    grid-row: 1/2;
+    margin-left: 30px;
+    margin-top: 35px;
+}
+
+.dashIntro {
+    font-size: 2rem;
+}
+
+.pageNavLinks {
+    grid-row: 2/3;
+    margin-bottom: 30px;
+}
+
+.pageNavSupport {
+    grid-row: 3/4;
+}
+
+.linksUl {
+    margin-left: 35px;
+}
+
+.linksUl.navLinks {
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    gap: 15px;
+}
+
+.linksUl.navSupport {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.navIcons {
+    /* margin-top: 12px; */
+    vertical-align: bottom;
+}
+
+a {
+    text-decoration: none;
 }
