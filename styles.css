@@ -259,11 +259,11 @@ main {
     margin-bottom: 5px;
 }
 
-.linksGithub>a {
-    transition: all 0.3s linear;
+.linksGithub>a>img {
+    transition: all 0.3s ease-in-out;
 }
 
-.linksGithub>a:hover {
+.linksGithub>a>img:hover {
     transform: scale(1.5);
 }
 
