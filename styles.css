@@ -20,18 +20,17 @@ body {
 }
 
 header {
-    background-color: aqua;
+    background-color: #8fd7c7;
     grid-column: 2/3;
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr 1fr;
-    box-shadow: 0 5px 5px #e2e8f0;
     z-index: 1;
 }
 
 
 main {
-    background-color: lightgray;
+    background-color: #ffe0db;
     grid-row: 2/3;
     grid-column: 2/3;
 }
@@ -96,9 +95,6 @@ main {
     margin-bottom: 20px;
 }
 
-.saluteUser {
-  
-}
 
 .userName.intro {
     font-weight: bold;
@@ -132,7 +128,7 @@ main {
 .mainBtn {
     cursor: pointer;
     color: white;
-    background-color: #de985e;
+    background-color: #fc92c4;
     border: none;
     width: 6.2rem;
     height: 2.2rem;
@@ -145,7 +141,7 @@ main {
     background-color: lightskyblue;
     grid-row: 1/3;
     display: grid;
-    grid-template-rows: 1fr 1fr 3fr;
+    grid-template-rows: 0.5fr 1fr 3fr;
     gap: 40px;
 }
 
@@ -191,6 +187,26 @@ main {
 
 a {
     text-decoration: none;
+    position: relative;
+}
+
+.linksUl.navLinks>li>a::before, .linksUl.navSupport>li>a::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        border-radius: 4px;
+        background-color: #18272F;
+        bottom: 0;
+        left: 0;
+        transform-origin: right;
+        transform: scaleX(0);
+        transition: transform .3s ease-in-out;
+}
+
+.linksUl.navLinks>li>a:hover::before, .linksUl.navSupport>li>a:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
 }
 
 
@@ -202,7 +218,7 @@ main {
 }
 
 .projects {
-    background-color: darkmagenta;
+    /* background-color: darkmagenta; */
     grid-row: 1/3;
     grid-column: 1/2;
 }
@@ -210,14 +226,49 @@ main {
 
 .projectsArticle {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-auto-rows: 1fr;
     gap: 1em;
 }
 
 .projectBox {
-    padding: 1em;
-    border: 1px solid black;
+    padding: 0.8em;
+    background-color: white;
+    border-left: 8px solid #fc92c4;
+    border-radius: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: stretch;
+}
+
+.projectBox>img {
+    border-radius: 0.5em;
+    box-shadow: 0.2em 0.2em 0.2em rgb(0 0 0 / 30%);
+    height: auto;
+    margin: 0 auto;
+    max-width: 650px;
+    width: 100%;
+}
+
+.projectBox>p {
+    font-size: 1.2rem;
+    flex: 1;
+    margin-top: 5.5px;
+    margin-bottom: 5px;
+}
+
+.linksGithub>a {
+    transition: all 0.3s linear;
+}
+
+.linksGithub>a:hover {
+    transform: scale(1.5);
+}
+
+.linksGithub {
+    text-align: right;
 }
 
 .JSexercise {
@@ -227,11 +278,11 @@ main {
 
 h3 {
     font-size: 1.3rem;
-    margin-bottom: 5px;
+    margin-bottom: 7px;
 }
 
 .JSarticle, .CSSarticle {
-    background-color: #f1f5f9;
+    background-color: white;
     padding: 0.5em 1em;
     border-radius: 1em;
     display: flex;
